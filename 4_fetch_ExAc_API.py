@@ -59,7 +59,7 @@ for alt, alt_info in api_dict.items():
 print('appending ExAc allele frequency...')
 newlines = []
 with open('Challenge_data_vcf_filtered_dbSnp153Common_SOterms_ExACfreq.txt', 'w') as file2out:
-    header = header + '\tExAC_allele_freq'
+    header = header + '\tExAC_allele_frequency'
     file2out.write(header + '\n')
     header = header.replace('\t',',')
     newlines.append(header)
