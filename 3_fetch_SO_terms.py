@@ -46,7 +46,7 @@ with open('so.obo', 'r') as ref:
             line_count += 1
 
 print('fetching SO terms...')
-with open('Challenge_data_vcf_filtered_dbSnp153Common.txt', 'r') as file2in:
+with open('data_vcf_filtered_dbSnp153Common.txt', 'r') as file2in:
     newlines = []
     header = file2in.readline()
     header = header.rstrip('\n')
@@ -63,7 +63,7 @@ with open('Challenge_data_vcf_filtered_dbSnp153Common.txt', 'r') as file2in:
         newlines.append(newline)
 
 print('appending SO terms...')
-with open('Challenge_data_vcf_filtered_dbSnp153Common_SOterms.txt', 'w') as file2out:
+with open('data_vcf_filtered_dbSnp153Common_SOterms.txt', 'w') as file2out:
     file2out.write(header + '\tmax_impact_function_SO_name\tmax_impact_function_SO_description\n')
     for newline in newlines:
         file2out.write(newline + '\n')
