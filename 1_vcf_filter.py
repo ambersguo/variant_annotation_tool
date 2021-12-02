@@ -19,7 +19,7 @@ import re
 time_start = time.time()
 print('vcf filtering...')
 
-with open('Challenge_data.vcf', 'r') as file2in:
+with open('data.vcf', 'r') as file2in:
     newlines = []
     total = total_pass = total_variants = 0
     for linein in file2in:
@@ -91,7 +91,7 @@ with open('Challenge_data.vcf', 'r') as file2in:
                         total_variants += 1
                         total_pass += 1
 
-with open('Challenge_data_vcf_filtered.txt', 'w') as file2out:
+with open('data_vcf_filtered.txt', 'w') as file2out:
     file2out.write('chr\tposition\treference\tvariant\tvariant_type\ttotal_read_depth\tvariant_read_count\treference_read_count\tvariant_read_count_percentage\treference_read_count_percentage\tallele_frequency\tCIGAR\n')
     for newline in newlines:
         file2out.write(newline + '\n')
