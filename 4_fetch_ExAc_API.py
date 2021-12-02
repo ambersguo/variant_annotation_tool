@@ -27,7 +27,7 @@ time_start = time.time()
 print('preparing ExAc API bulk query...')
 
 # prepare ExAc API bulk query
-with open('Challenge_data_vcf_filtered_dbSnp153Common_SOterms.txt', 'r') as file2in:
+with open('data_vcf_filtered_dbSnp153Common_SOterms.txt', 'r') as file2in:
     lines = []
     api_input = []
     alt2line = {}
@@ -58,7 +58,7 @@ for alt, alt_info in api_dict.items():
 
 print('appending ExAc allele frequency...')
 newlines = []
-with open('Challenge_data_vcf_filtered_dbSnp153Common_SOterms_ExACfreq.txt', 'w') as file2out:
+with open('data_vcf_filtered_dbSnp153Common_SOterms_ExACfreq.txt', 'w') as file2out:
     header = header + '\tExAC_allele_frequency'
     file2out.write(header + '\n')
     header = header.replace('\t',',')
@@ -76,7 +76,7 @@ with open('Challenge_data_vcf_filtered_dbSnp153Common_SOterms_ExACfreq.txt', 'w'
         newline = newline.replace('\t',',')
         newlines.append(newline)
 
-with open('Challenge_data_vcf_filtered_dbSnp153Common_SOterms_ExACfreq.csv', 'w') as csv2out:
+with open('data_vcf_filtered_dbSnp153Common_SOterms_ExACfreq.csv', 'w') as csv2out:
     df = pd.DataFrame([newline.split(',') for newline in newlines])
     df.to_csv(csv2out, header=False, index=False, sep=',')
 
