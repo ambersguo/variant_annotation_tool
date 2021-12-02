@@ -45,7 +45,7 @@ with open('dbSnp153Common.bed', 'r') as ref:
         coralt2info[cor_alt] = dbinfo
 
 print('fetching dbSnp terms...')
-with open('Challenge_data_vcf_filtered.txt', 'r') as file2in:
+with open('data_vcf_filtered.txt', 'r') as file2in:
     newlines = []
     header = file2in.readline()
     header = header.rstrip('\n')
@@ -76,7 +76,7 @@ with open('Challenge_data_vcf_filtered.txt', 'r') as file2in:
         newlines.append(newline)
 
 print('appending dbSnp terms...')
-with open('Challenge_data_vcf_filtered_dbSnp153Common.txt', 'w') as file2out:
+with open('data_vcf_filtered_dbSnp153Common.txt', 'w') as file2out:
     file2out.write(header + '\tclass_dbSnp\tid_dbSnp\tmax_function_impact_SO_id\n')
     for newline in newlines:
         file2out.write(newline + '\n')
